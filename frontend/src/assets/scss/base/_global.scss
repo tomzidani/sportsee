@@ -1,0 +1,17 @@
+/*
+ * Global
+ */
+
+html,
+body {
+  @include roboto;
+  font-size: map-get($settings, text-size);
+  color: map-get($settings, text-color);
+  background: map-get($settings, bg-color);
+  line-height: 1;
+}
+
+a {
+  color: map-get($settings, text-color);
+  text-decoration: none;
+}

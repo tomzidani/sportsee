@@ -1,0 +1,65 @@
+/*
+ * Layout
+ */
+
+// MQ
+$mq-responsive: true;
+$mq-breakpoints: (
+  mobile: map-get($breakpoints, mobile),
+  tablet: map-get($breakpoints, tablet),
+  desktop: map-get($breakpoints, desktop),
+  wide: map-get($breakpoints, wide),
+  _wide: map-get($breakpoints, _wide),
+);
+
+@import "~sass-mq";
+
+// Container
+$container: map-get($breakpoints, wide);
+
+@mixin container($width: $container) {
+  position: relative;
+  max-width: $width;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+
+  // Queries
+  @include mq($until: _wide) {
+    max-width: map-get($breakpoints, wide);
+  }
+
+  @include mq($until: wide) {
+    max-width: map-get($breakpoints, desktop);
+  }
+
+  @include mq($until: desktop) {
+    max-width: map-get($breakpoints, tablet);
+  }
+}
+
+.container {
+  @include container;
+}
+
+// Layout
+$gutter-width: 3%;
+$grid-columns: 12;
+$grid-push: 0;
+
+@mixin columns-wrapper($gutter: $gutter-width) {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: $gutter * -1;
+}
+
+@mixin columns-span($column, $gutter: $gutter-width, $grid: $grid-columns, $push: $grid-push) {
+  width: (($column - $push) / $grid) * 100% - $gutter;
+
+  @if $push == 0 {
+    margin-left: $gutter;
+  } @else {
+    margin-left: ($push / $grid) * 100% + $gutter;
+  }
+}
