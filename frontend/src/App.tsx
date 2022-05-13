@@ -1,5 +1,11 @@
+import { Header } from "@components/layout"
+
 const App = () => {
-  return <p>Hello World !</p>
+  return (
+    <>
+      <Header />
+    </>
+  )
 }
 
 export default App

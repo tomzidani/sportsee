@@ -1,0 +1,41 @@
+/*
+ * Header
+ */
+.app-header {
+  background: $black;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  .header {
+    &__wrapper {
+      display: flex;
+      padding: 15px 90px 20px 30px;
+
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__logo {
+      width: 180px;
+    }
+
+    &__nav {
+      margin-left: 150px;
+      flex: 1;
+
+      > ul {
+        display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+
+        > li {
+          font-size: 24px;
+
+          > a {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
