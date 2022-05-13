@@ -1,0 +1,51 @@
+/*
+ * Aside
+ */
+.app-aside {
+  display: inline-block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: calc(100vh - 120px);
+  padding: 60px 25px;
+
+  background: $black;
+
+  .aside {
+    &__wrapper {
+      display: flex;
+      position: relative;
+      height: 100%;
+
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__categories {
+      > li {
+        display: grid;
+        width: 64px;
+        height: 64px;
+
+        place-content: center;
+        background: $white;
+        border-radius: 6px;
+
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    &__copyright {
+      position: absolute;
+      bottom: 0;
+
+      font-size: 12px;
+      writing-mode: tb-rl;
+      transform: rotate(180deg);
+      color: $white;
+    }
+  }
+}

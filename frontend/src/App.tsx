@@ -1,9 +1,10 @@
-import { Header } from "@components/layout"
+import { Aside, Header } from "@components/layout"
 
 const App = () => {
   return (
     <>
       <Header />
+      <Aside />
     </>
   )
 }
