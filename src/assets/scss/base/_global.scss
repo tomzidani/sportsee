@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  @include source-sans-pro;
+  @include roboto;
   background: map-get($settings, bg-color);
   color: map-get($settings, text-color);
 }

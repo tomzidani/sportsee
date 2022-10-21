@@ -1,0 +1,55 @@
+/*
+ * Aside
+ */
+.app-aside {
+  position: absolute;
+  display: flex;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+
+  background: $black;
+
+  .aside {
+    &__wrapper {
+      display: flex;
+      position: relative;
+      padding: 60px 30px;
+
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    &__nav {
+      > ul {
+        display: flex;
+        gap: 20px;
+
+        align-items: center;
+        flex-direction: column;
+
+        > li {
+          display: grid;
+          width: 64px;
+          height: 64px;
+
+          place-content: center;
+          background: $white;
+          border-radius: 6px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__copyright {
+      position: absolute;
+      bottom: 60px;
+
+      color: $white;
+      writing-mode: tb-rl;
+      transform: rotate(180deg);
+    }
+  }
+}

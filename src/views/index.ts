@@ -1,5 +1,5 @@
-import Home from "./Home/Home"
+import { Profile } from "./Profile/Profile"
 
 import NotFound from "./NotFound/NotFound"
 
-export { Home, NotFound }
+export { Profile, NotFound }
