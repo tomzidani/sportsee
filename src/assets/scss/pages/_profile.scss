@@ -1,0 +1,29 @@
+/*
+ * Profile
+ */
+.app-profile {
+  .profile {
+    &__wrapper {
+    }
+
+    &__header {
+      margin-bottom: 80px;
+      .header {
+        &__title {
+          font-size: 48px;
+
+          > b {
+            color: $red;
+          }
+        }
+
+        &__text {
+          margin-top: 35px;
+
+          font-size: 18px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
