@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router-dom"
-
-import { Profile, NotFound } from "@views"
+import { Home, Profile, NotFound } from "@views"
 
 const App = () => (
   <Routes>
-    <Route path="/" element={<Profile />} />
+    <Route path="/" element={<Home />} />
+    <Route path="/profil/:id" element={<Profile />} />
 
     <Route path="*" element={<NotFound />} />
   </Routes>

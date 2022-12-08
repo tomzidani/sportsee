@@ -3,7 +3,23 @@
  */
 .app-profile {
   .profile {
-    &__wrapper {
+    &__introduction {
+    }
+
+    &__title {
+      margin-bottom: 40px;
+
+      @include roboto--bold;
+      font-size: 48px;
+
+      > b {
+        color: $red;
+      }
+    }
+
+    &__text {
+      font-weight: 400;
+      font-size: 18px;
     }
 
     &__header {
@@ -24,6 +40,13 @@
           font-weight: 400;
         }
       }
+    }
+
+    &__performance {
+      max-width: 360px;
+
+      background: #282d30;
+      border-radius: 5px;
     }
   }
 }
