@@ -32,3 +32,13 @@ const formatPerformanceSubjectName = (subjectName: string) => {
 
   return formattedPerformanceSubjectName[subjectName] || subjectName
 }
+
+export const formatScoreData = (score: number) => {
+  return [
+    {
+      name: "Score d'aujourd'hui",
+      score: score * 100,
+      fill: "#ff0000",
+    },
+  ]
+}

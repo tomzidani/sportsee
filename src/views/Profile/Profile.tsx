@@ -4,6 +4,7 @@ import { getUserData, getUserInformations } from "@/utils/helpers/data.helpers"
 import { redirect, useParams } from "react-router-dom"
 import ProfilePerformanceChart from "./ProfilePerformanceChart"
 import { UserInformations } from "@/utils/types"
+import ProfileScoreChart from "./ProfileScoreChart"
 
 export const Profile = () => {
   const [user, setUser] = useState<any>(null)
@@ -41,6 +42,7 @@ export const Profile = () => {
             <section className="profile__informations">
               <div className="profile__charts">
                 <ProfilePerformanceChart performance={userInformations!.performance} />
+                <ProfileScoreChart score={user.todayScore} />
               </div>
             </section>
           </Container>
