@@ -1,0 +1,63 @@
+/*
+ * Stat Card
+ */
+.stat-card {
+  background: $gray;
+  border-radius: 5px;
+
+  .card {
+    &__wrapper {
+      display: flex;
+      padding: 32px;
+      gap: 25px;
+
+      align-items: center;
+    }
+
+    &__icon {
+      display: grid;
+      width: 60px;
+      height: 60px;
+
+      place-content: center;
+      border-radius: 5px;
+    }
+
+    &__title {
+      margin-bottom: 5px;
+
+      font-weight: 500;
+      font-size: 20px;
+    }
+
+    &__label {
+      font-size: 14px;
+      font-weight: normal;
+      color: $gray-dark;
+    }
+  }
+
+  &.calorie {
+    .card__icon {
+      background: #ff000012;
+    }
+  }
+
+  &.protein {
+    .card__icon {
+      background: #4ab8ff1a;
+    }
+  }
+
+  &.carbohydrate {
+    .card__icon {
+      background: #f9ce231a;
+    }
+  }
+
+  &.lipid {
+    .card__icon {
+      background: #fd51811a;
+    }
+  }
+}

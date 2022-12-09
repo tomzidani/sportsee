@@ -6,6 +6,7 @@ import ProfilePerformanceChart from "./ProfilePerformanceChart"
 import { UserInformations } from "@/utils/types"
 import ProfileScoreChart from "./ProfileScoreChart"
 import ProfileUserAverageSessionsChart from "./ProfileUserAverageSessionsChart"
+import ProfileStats from "./ProfileStats"
 
 export const Profile = () => {
   const [user, setUser] = useState<any>(null)
@@ -48,7 +49,7 @@ export const Profile = () => {
                   <ProfileScoreChart score={user.todayScore || user.score} />
                 </div>
               </div>
-              <div className="profile__stats"></div>
+              <ProfileStats stats={user.keyData!} />
             </section>
           </Container>
         </main>

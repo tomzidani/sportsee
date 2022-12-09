@@ -29,7 +29,6 @@ const SimpleLine: FC<SimpleLineProps> = ({ data }) => {
           tickLine={false}
           tick={{ fill: "#fff", opacity: 0.5, fontSize: 12, x: 15 }}
           padding={{ left: 15, right: 15 }}
-          //   label={{ x: 15 }}
         />
 
         <Tooltip

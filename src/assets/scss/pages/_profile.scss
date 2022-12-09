@@ -42,10 +42,13 @@
       }
     }
 
+    &__details {
+      flex: 1;
+    }
+
     &__charts {
       display: flex;
       min-height: 260px;
-      margin-top: 30px;
       gap: 30px;
     }
 
@@ -60,7 +63,7 @@
       position: relative;
       max-width: 265px;
 
-      background: #fbfbfb;
+      background: $gray;
       border-radius: 5px;
 
       .recharts-responsive-container {
@@ -106,7 +109,7 @@
 
         &__text {
           font-size: 16px;
-          color: $gray;
+          color: $gray-dark;
         }
       }
     }
@@ -123,6 +126,24 @@
         font-size: 10px;
         background: $white;
       }
+    }
+
+    &__informations {
+      display: flex;
+      gap: 30px;
+      margin-top: 30px;
+
+      align-items: stretch;
+    }
+
+    // Stats
+    &__stats {
+      display: flex;
+      gap: 40px;
+      flex: 1;
+
+      flex-direction: column;
+      justify-content: space-between;
     }
   }
 }
