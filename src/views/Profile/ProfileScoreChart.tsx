@@ -7,7 +7,7 @@ interface ProfileScoreChartProps {
 }
 
 const ProfileScoreChart: FC<ProfileScoreChartProps> = ({ score }) => {
-  const scoreFormattedData = formatScoreData(score)
+  const scoreFormattedData = formatScoreData(score as number)
 
   return (
     <div className="profile__score">

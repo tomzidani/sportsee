@@ -5,6 +5,7 @@ import { redirect, useParams } from "react-router-dom"
 import ProfilePerformanceChart from "./ProfilePerformanceChart"
 import { UserInformations } from "@/utils/types"
 import ProfileScoreChart from "./ProfileScoreChart"
+import ProfileUserAverageSessionsChart from "./ProfileUserAverageSessionsChart"
 
 export const Profile = () => {
   const [user, setUser] = useState<any>(null)
@@ -40,10 +41,14 @@ export const Profile = () => {
             </section>
 
             <section className="profile__informations">
-              <div className="profile__charts">
-                <ProfilePerformanceChart performance={userInformations!.performance} />
-                <ProfileScoreChart score={user.todayScore} />
+              <div className="profile__details">
+                <div className="profile__charts">
+                  <ProfileUserAverageSessionsChart averageSessions={userInformations!.averageSessions} />
+                  <ProfilePerformanceChart performance={userInformations!.performance} />
+                  <ProfileScoreChart score={user.todayScore || user.score} />
+                </div>
               </div>
+              <div className="profile__stats"></div>
             </section>
           </Container>
         </main>

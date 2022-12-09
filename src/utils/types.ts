@@ -1,5 +1,6 @@
 export type UserInformations = {
   performance: PerformanceData
+  averageSessions: any
 }
 
 export type PerformanceData = {
@@ -13,6 +14,15 @@ export type PerformanceData = {
   userId: number
 }
 
+export type AverageSessionsData = {
+  sessions: SessionData[]
+  userId: number
+}
+
+export type SessionData = {
+  day: number
+  sessionLength: number
+}
 export type RadarChartData = [
   {
     subject: string
