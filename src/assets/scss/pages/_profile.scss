@@ -48,6 +48,7 @@
 
     &__charts {
       display: flex;
+      margin-top: 30px;
       min-height: 260px;
       gap: 30px;
     }
@@ -144,6 +145,48 @@
 
       flex-direction: column;
       justify-content: space-between;
+    }
+
+    &__activity {
+      position: relative;
+      padding: 25px 30px;
+
+      background: $gray;
+
+      .activity {
+        &__title {
+          font-size: 15px;
+          font-weight: 500;
+        }
+      }
+
+      // Chart legend
+      .recharts-legend-wrapper {
+        transform: translateY(-125%);
+
+        .legend-item-0 {
+          margin-right: 30px !important;
+        }
+      }
+
+      // Chart tooltip
+      .tooltip {
+        padding: 15px 10px;
+
+        text-align: center;
+        color: $white;
+        font-size: 10px;
+        font-weight: 400;
+        background: #e60000;
+
+        > b {
+          display: block;
+
+          &:not(:last-child) {
+            margin-bottom: 10px;
+          }
+        }
+      }
     }
   }
 }

@@ -7,6 +7,7 @@ import { UserInformations } from "@/utils/types"
 import ProfileScoreChart from "./ProfileScoreChart"
 import ProfileUserAverageSessionsChart from "./ProfileUserAverageSessionsChart"
 import ProfileStats from "./ProfileStats"
+import ProfileActivityChart from "./ProfileActivity"
 
 export const Profile = () => {
   const [user, setUser] = useState<any>(null)
@@ -26,6 +27,8 @@ export const Profile = () => {
 
   if (userId && !user) getUser()
 
+  console.log(userInformations)
+
   return (
     <>
       <Header />
@@ -43,6 +46,7 @@ export const Profile = () => {
 
             <section className="profile__informations">
               <div className="profile__details">
+                <ProfileActivityChart activity={userInformations!.activity.sessions} />
                 <div className="profile__charts">
                   <ProfileUserAverageSessionsChart averageSessions={userInformations!.averageSessions} />
                   <ProfilePerformanceChart performance={userInformations!.performance} />

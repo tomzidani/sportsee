@@ -1,4 +1,5 @@
 export type UserInformations = {
+  activity: any
   performance: PerformanceData
   averageSessions: any
 }
