@@ -1,0 +1,67 @@
+/*
+ * Home
+ */
+.app-home {
+  display: grid;
+  min-height: 100vh;
+
+  place-content: center;
+
+  .home {
+    &__wrapper {
+      max-width: 800px;
+    }
+
+    &__header {
+      padding: 15px;
+
+      text-align: center;
+      background: $gray;
+      border-radius: 5px;
+    }
+
+    &__title {
+      @include roboto--bold;
+      color: $red;
+      font-size: 30px;
+    }
+
+    &__text {
+      margin-top: 10px;
+
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    &__users {
+      padding: 5px;
+      margin-top: 15px;
+
+      background: $black;
+      border-radius: 5px;
+
+      > ul {
+        > li {
+          &:not(:last-child) {
+            margin-bottom: 5px;
+          }
+
+          > a {
+            display: block;
+            padding: 15px;
+
+            color: $black;
+            background: $gray;
+            border-radius: 5px;
+
+            transition: color ease-in-out 0.2s;
+
+            &:hover {
+              color: $red;
+            }
+          }
+        }
+      }
+    }
+  }
+}
