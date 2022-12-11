@@ -1,6 +1,6 @@
 import { FC } from "react"
 import { Radial } from "@components/chart"
-import { formatScoreData } from "@utils/helpers/format.helpers"
+import { formatScoreData } from "@utils/helpers/score.helpers"
 
 interface ProfileScoreChartProps {
   score: number

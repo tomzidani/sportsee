@@ -1,7 +1,6 @@
 import { FC } from "react"
 import { Radar } from "@components/chart"
-import { formatPerformanceData } from "@utils/helpers/format.helpers"
-import { PerformanceData } from "@utils/types"
+import { formatPerformanceData, PerformanceData } from "@/utils/helpers/performance.helpers"
 
 interface ProfilePerformanceChartProps {
   performance: PerformanceData

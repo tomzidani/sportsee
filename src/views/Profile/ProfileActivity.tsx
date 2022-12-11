@@ -1,6 +1,6 @@
 import { FC } from "react"
 import { Bar } from "@components/chart"
-import { formatActivity } from "@/utils/helpers/activity.helpers"
+import { formatActivity } from "@utils/helpers/activity.helpers"
 
 interface ProfileActivityChartProps {
   activity: any

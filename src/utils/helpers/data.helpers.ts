@@ -1,8 +1,15 @@
 import axios, { AxiosError, AxiosResponse } from "axios"
 import { redirect } from "react-router-dom"
-import { AverageSessionsData, PerformanceData } from "../types"
+import { AverageSessionsData } from "../types"
+import { PerformanceData } from "./performance.helpers"
 
-export const getUserData = async (userId: string) => {
+/**
+ * Get user data.
+ *
+ * @param {string} userId
+ * @returns {Promise<any>}
+ */
+export const getUserData = async (userId: string): Promise<any> => {
   return await axios
     .get(`${process.env.REACT_APP_API_URL}/user/${userId}`)
     .then((res: AxiosResponse) => res.data.data)
@@ -12,7 +19,13 @@ export const getUserData = async (userId: string) => {
     })
 }
 
-export const getUserInformations = async (userId: string) => {
+/**
+ * Get user informations.
+ *
+ * @param {string} userId
+ * @returns {Promise<any>}
+ */
+export const getUserInformations = async (userId: string): Promise<any> => {
   const userActivity: any = await getUserActivity(userId)
   const userPerformances: PerformanceData = await getUserPerformances(userId)
   const userAverageSessions: AverageSessionsData = await getUserAverageSessions(userId)
@@ -24,7 +37,13 @@ export const getUserInformations = async (userId: string) => {
   }
 }
 
-const getUserPerformances = async (userId: string) => {
+/**
+ * Get user performances.
+ *
+ * @param {string} userId
+ * @returns {Promise<any>}
+ */
+const getUserPerformances = async (userId: string): Promise<any> => {
   return await axios
     .get(`${process.env.REACT_APP_API_URL}/user/${userId}/performance`)
     .then((res: AxiosResponse) => res.data.data)
@@ -34,7 +53,13 @@ const getUserPerformances = async (userId: string) => {
     })
 }
 
-const getUserAverageSessions = async (userId: string) => {
+/**
+ * Get user average sessions.
+ *
+ * @param {string} userId
+ * @returns {Promise<any>}
+ */
+const getUserAverageSessions = async (userId: string): Promise<any> => {
   return await axios
     .get(`${process.env.REACT_APP_API_URL}/user/${userId}/average-sessions`)
     .then((res: AxiosResponse) => res.data.data)
@@ -44,7 +69,13 @@ const getUserAverageSessions = async (userId: string) => {
     })
 }
 
-const getUserActivity = async (userId: string) => {
+/**
+ * Get user activity.
+ *
+ * @param {string} userId
+ * @returns {Promise<any>}
+ */
+const getUserActivity = async (userId: string): Promise<any> => {
   return await axios
     .get(`${process.env.REACT_APP_API_URL}/user/${userId}/activity`)
     .then((res: AxiosResponse) => res.data.data)

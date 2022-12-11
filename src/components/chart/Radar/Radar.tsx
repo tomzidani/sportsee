@@ -1,9 +1,9 @@
+import { PerformanceFormattedData } from "@utils/helpers/performance.helpers"
 import { FC } from "react"
 import { ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, Radar as R, PolarRadiusAxis } from "recharts"
-import { RadarChartData } from "@utils/types"
 
 interface RadarProps {
-  data: RadarChartData
+  data: PerformanceFormattedData[]
 }
 
 const Radar: FC<RadarProps> = ({ data }) => {

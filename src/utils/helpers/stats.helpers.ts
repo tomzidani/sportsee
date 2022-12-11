@@ -1,5 +1,11 @@
 import { Icon } from "@components/content"
 
+/**
+ * Format stats data.
+ *
+ * @param stats
+ * @returns
+ */
 export const formatStats = (stats: any) => {
   const formattedStats: any = []
   const statsArr = Object.keys(stats)
@@ -7,8 +13,8 @@ export const formatStats = (stats: any) => {
   statsArr.forEach((statName: string) => {
     const id = getStatId(statName)
     const icon = getStatIcon(statName)
-    const label = formatStatsLabel(statName)
-    const value = formatStatsValue(statName, stats[statName])
+    const label = formatStatLabel(statName)
+    const value = formatStatValue(statName, stats[statName])
 
     const formattedStatObj = {
       id,
@@ -23,7 +29,13 @@ export const formatStats = (stats: any) => {
   return formattedStats
 }
 
-const getStatId = (statName: string) => {
+/**
+ * Get stat id by stat name.
+ *
+ * @param {string} statName
+ * @returns {string}
+ */
+const getStatId = (statName: string): string => {
   const idObj: any = {
     calorieCount: "calorie",
     carbohydrateCount: "carbohydrate",
@@ -34,7 +46,13 @@ const getStatId = (statName: string) => {
   return idObj[statName] || statName
 }
 
-const getStatIcon = (statName: string) => {
+/**
+ * Get stat icon by stat name.
+ *
+ * @param {string} statName
+ * @returns {React.FunctionComponent}
+ */
+const getStatIcon = (statName: string): React.FunctionComponent => {
   const iconObj: any = {
     calorieCount: Icon.Energy,
     carbohydrateCount: Icon.Apple,
@@ -45,7 +63,13 @@ const getStatIcon = (statName: string) => {
   return iconObj[statName] || null
 }
 
-const formatStatsLabel = (statName: string) => {
+/**
+ * Format stats label by stat name.
+ *
+ * @param {string} statName
+ * @returns {string}
+ */
+const formatStatLabel = (statName: string): string => {
   const labelObj: any = {
     calorieCount: "Calories",
     carbohydrateCount: "Glucides",
@@ -56,7 +80,14 @@ const formatStatsLabel = (statName: string) => {
   return labelObj[statName] || statName
 }
 
-const formatStatsValue = (statName: string, val: string) => {
+/**
+ * Format stat value by stat name.
+ *
+ * @param {string} statName
+ * @param {string} val
+ * @returns {string}
+ */
+const formatStatValue = (statName: string, val: string): string => {
   const valuesObj: any = {
     calorieCount: `${val}kCal`,
     carbohydrateCount: `${val}g`,

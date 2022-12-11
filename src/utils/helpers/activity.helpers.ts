@@ -1,4 +1,10 @@
-export const formatActivity = (activity: any) => {
+/**
+ * Format activity data to match the chart.
+ *
+ * @param {any} activity
+ * @returns {any}
+ */
+export const formatActivity = (activity: any): any => {
   const formattedActivity: any = []
 
   activity.forEach((act: any) => {
