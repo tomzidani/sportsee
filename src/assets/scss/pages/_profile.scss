@@ -116,6 +116,7 @@
     }
 
     &__average-sessions {
+      position: relative;
       max-width: 265px;
 
       background: $red;
@@ -126,6 +127,19 @@
 
         font-size: 10px;
         background: $white;
+      }
+
+      .average-sessions {
+        &__label {
+          position: absolute;
+          top: 30px;
+          left: 35px;
+
+          line-height: 24px;
+          color: $white;
+          opacity: 0.5;
+          font-size: 15px;
+        }
       }
     }
 

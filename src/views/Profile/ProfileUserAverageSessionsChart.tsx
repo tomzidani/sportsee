@@ -12,6 +12,11 @@ const ProfileUserAverageSessionsChart: FC<ProfileUserAverageSessionsChartProps> 
 
   return (
     <div className="profile__average-sessions">
+      <span className="average-sessions__label">
+        Durée moyenne des
+        <br /> sessions
+      </span>
+
       <SimpleLine data={formattedAverageSessions} />
     </div>
   )
