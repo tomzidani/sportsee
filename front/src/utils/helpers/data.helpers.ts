@@ -15,6 +15,14 @@ export const getUserData = async (userId: string): Promise<any> => {
     .then((res: AxiosResponse) => res.data.data)
     .catch((err: AxiosError) => {
       console.error(err)
+
+      // Display error informations only in this case,
+      // if API is not online, we get multiples errors alert
+      // so we just get one here.
+      if (err.code === "ERR_NETWORK") {
+        alert("Une erreur est survenue, contactez les administrateurs du site ou veuillez réessayer plus tard.")
+      }
+
       redirect("/")
     })
 }
